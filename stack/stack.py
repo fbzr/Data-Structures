@@ -9,8 +9,10 @@ return elements in Last In First Out order.
    Make sure the Stack tests pass.
 3. What is the difference between using an array vs. a linked list when 
    implementing a Stack?
+
+    # With array you have to pass the index of the item (its length - 1) to pop/remove and with LinkedList you remove its tail
+    #Linked list avoids contiguous memory
 """
-#Linked list avoids contiguous memory
 
 from singly_linked_list import LinkedList
 class Stack:
