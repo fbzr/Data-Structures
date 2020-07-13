@@ -61,6 +61,17 @@ class LinkedList:
             self.tail.set_next(new_node)
             # set the list's tail reference to the new node
             self.tail = new_node
+    
+    def prepend(self, value):
+        new_node = Node(value)
+        
+        if not self.head:
+            # if the list is initially empty, set both head and tail to the new node
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.set_next(self.head)
+            self.head = new_node
 
     def remove_head(self):
         # return None if there is no head (i.e. the list is empty)
