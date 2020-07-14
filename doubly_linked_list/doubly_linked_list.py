@@ -56,17 +56,21 @@ class DoublyLinkedList:
             # save value to be returned
             value = self.head.value
             
-            if not self.head.next:
-                self.tail = None
+            # if not self.head.next:
+            #     self.tail = None
 
-            # update head
-            self.head = self.head.next
+            # # update head
+            # self.head = self.head.next
             
-            if self.head:
-                # point head prev to None
-                self.head.prev = None
+            # if self.head:
+            #     # point head prev to None
+            #     self.head.prev = None
 
-            self.length -= 1
+            # self.length -= 1
+            
+            # --------------------------------
+            # DRY version
+            self.delete(self.tail)
 
         return value
             
@@ -103,18 +107,22 @@ class DoublyLinkedList:
             # save value to be returned
             value = self.tail.value
 
-            # check if there is only one element
-            if not self.tail.prev:
-                self.head = None
+            # # check if there is only one element
+            # if not self.tail.prev:
+            #     self.head = None
 
-            # update tail
-            self.tail = self.tail.prev
+            # # update tail
+            # self.tail = self.tail.prev
 
-            if self.head:
-                # point tail next to None
-                self.head.next = None
+            # if self.head:
+            #     # point tail next to None
+            #     self.head.next = None
 
-            self.length -= 1
+            # self.length -= 1
+
+            # --------------------------------
+            # DRY version
+            self.delete(self.tail)
 
         return value
             
