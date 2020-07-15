@@ -95,7 +95,17 @@ class BSTNode:
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
-        pass
+        nodes = queue.LifoQueue()
+        
+        nodes.put(node)
+
+        while not nodes.empty():
+            current = nodes.get()
+            print(current.value)
+            if current.right:
+                nodes.put(current.right)
+            if current.left:
+                nodes.put(current.left)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
