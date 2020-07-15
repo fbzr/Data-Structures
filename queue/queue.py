@@ -38,52 +38,52 @@ class Queue:
 
 # --------------------------------------
 
-    # def __init__(self):
-    #     self.size = 0
-    #     self.storage = LinkedList()
-    
-    # def __len__(self):
-    #     return self.size
-
-    # def enqueue(self, value):
-    #     self.storage.add_to_tail(value)
-    #     self.size += 1
-
-    # def dequeue(self):
-    #     if self.storage.head:
-    #         self.size -= 1
-    #         return self.storage.remove_head()
-        
-    #     return None
-
-# --------------------------------------
-# STRETCH
     def __init__(self):
         self.size = 0
-        self.stack_in = Stack()
-        self.stack_out = Stack()
+        self.storage = LinkedList()
     
     def __len__(self):
         return self.size
 
     def enqueue(self, value):
-        for _ in range(self.stack_out.size):
-            self.stack_in.push(self.stack_out.pop())
-
-        self.stack_in.push(value)
+        self.storage.add_to_tail(value)
         self.size += 1
 
     def dequeue(self):
-        if self.size:
-            for _ in range(self.stack_out.size):
-                self.stack_in.push(self.stack_out.pop())
-
-            while (self.stack_in.size > 0):
-                self.stack_out.push(self.stack_in.pop())
-            
+        if self.storage.head:
             self.size -= 1
-            return self.stack_out.pop()
-
+            return self.storage.remove_head()
+        
         return None
+
+# --------------------------------------
+# STRETCH
+    # def __init__(self):
+    #     self.size = 0
+    #     self.stack_in = Stack()
+    #     self.stack_out = Stack()
+    
+    # def __len__(self):
+    #     return self.size
+
+    # def enqueue(self, value):
+    #     for _ in range(self.stack_out.size):
+    #         self.stack_in.push(self.stack_out.pop())
+
+    #     self.stack_in.push(value)
+    #     self.size += 1
+
+    # def dequeue(self):
+    #     if self.size:
+    #         for _ in range(self.stack_out.size):
+    #             self.stack_in.push(self.stack_out.pop())
+
+    #         while (self.stack_in.size > 0):
+    #             self.stack_out.push(self.stack_in.pop())
+            
+    #         self.size -= 1
+    #         return self.stack_out.pop()
+
+    #     return None
         
         
