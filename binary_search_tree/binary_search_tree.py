@@ -115,17 +115,17 @@ class BSTNode:
         print(node.value)
 
         if node.left:
-            self.in_order_print(node.left)
+            self.pre_order_dft(node.left)
 
         if node.right:
-            self.in_order_print(node.right)
+            self.pre_order_dft(node.right)
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
         if node.left:
-            self.in_order_print(node.left)
+            self.post_order_dft(node.left)
 
         if node.right:
-            self.in_order_print(node.right)
+            self.post_order_dft(node.right)
         
         print(node.value)
